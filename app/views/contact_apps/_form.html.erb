@@ -1,0 +1,53 @@
+<%= form_for(@contact_app) do |f| %>
+  <% if @contact_app.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact_app.errors.count, "error") %> prohibited this contact_app from being saved:</h2>
+
+      <ul>
+      <% @contact_app.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :First_name %><br>
+    <%= f.text_field :First_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Last_Name %><br>
+    <%= f.text_field :Last_Name %>
+  </div>
+  <div class="field">
+    <%= f.label :Phone %><br>
+    <%= f.text_field :Phone %>
+  </div>
+  <div class="field">
+    <%= f.label :Telephone %><br>
+    <%= f.text_field :Telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :Work_Phone %><br>
+    <%= f.text_field :Work_Phone %>
+  </div>
+  <div class="field">
+    <%= f.label :Email_Id %><br>
+    <%= f.text_field :Email_Id %>
+  </div>
+  <div class="field">
+    <%= f.label :Work_Email %><br>
+    <%= f.text_field :Work_Email %>
+  </div>
+  <div class="field">
+    <%= f.label :Github_Id %><br>
+    <%= f.text_field :Github_Id %>
+  </div>
+  <div class="field">
+    <%= f.label :Facebook_Id %><br>
+    <%= f.text_field :Facebook_Id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

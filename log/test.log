@@ -1,0 +1,100 @@
+  [1m[36m (97.8ms)[0m  [1mCREATE TABLE "contact_apps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "First_name" varchar, "Last_Name" varchar, "Phone" varchar, "Telephone" varchar, "Work_Phone" varchar, "Email_Id" varchar, "Work_Email" varchar, "Github_Id" varchar, "Facebook_Id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (74.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (99.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (56.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161228034042')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "contact_apps"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "contact_apps" ("First_name", "Last_Name", "Phone", "Telephone", "Work_Phone", "Email_Id", "Work_Email", "Github_Id", "Facebook_Id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2016-12-28 06:59:28', '2016-12-28 06:59:28', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "contact_apps" ("First_name", "Last_Name", "Phone", "Telephone", "Work_Phone", "Email_Id", "Work_Email", "Github_Id", "Facebook_Id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2016-12-28 06:59:28', '2016-12-28 06:59:28', 298486374)[0m
+  [1m[35m (59.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------
+ContactAppsControllerTest: test_should_destroy_contact_app
+----------------------------------------------------------
+  [1m[35mContactApp Load (0.2ms)[0m  SELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contact_apps"[0m
+Processing by ContactAppsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mContactApp Load (0.1ms)[0m  SELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "contact_apps" WHERE "contact_apps"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/contact_apps
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "contact_apps"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------------------------
+ContactAppsControllerTest: test_should_show_contact_app
+-------------------------------------------------------
+  [1m[36mContactApp Load (0.1ms)[0m  [1mSELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ContactAppsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mContactApp Load (0.1ms)[0m  SELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1  [["id", 980190962]]
+  Rendered contact_apps/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4858ms (Views: 4857.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+---------------------------------------------------------
+ContactAppsControllerTest: test_should_create_contact_app
+---------------------------------------------------------
+  [1m[36mContactApp Load (0.1ms)[0m  [1mSELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "contact_apps"
+Processing by ContactAppsController#create as HTML
+  Parameters: {"contact_app"=>{"Email_Id"=>"MyString", "Facebook_Id"=>"MyString", "First_name"=>"MyString", "Github_Id"=>"MyString", "Last_Name"=>"MyString", "Phone"=>"MyString", "Telephone"=>"MyString", "Work_Email"=>"MyString", "Work_Phone"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered contact_apps/_form.html.erb (11.9ms)
+  Rendered contact_apps/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 33ms (Views: 16.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "contact_apps"[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+ContactAppsControllerTest: test_should_get_edit
+-----------------------------------------------
+  [1m[35mContactApp Load (0.1ms)[0m  SELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ContactAppsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mContactApp Load (0.0ms)[0m  [1mSELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Rendered contact_apps/_form.html.erb (3.1ms)
+  Rendered contact_apps/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------
+ContactAppsControllerTest: test_should_update_contact_app
+---------------------------------------------------------
+  [1m[35mContactApp Load (0.1ms)[0m  SELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ContactAppsController#update as HTML
+  Parameters: {"contact_app"=>{"Email_Id"=>"MyString", "Facebook_Id"=>"MyString", "First_name"=>"MyString", "Github_Id"=>"MyString", "Last_Name"=>"MyString", "Phone"=>"MyString", "Telephone"=>"MyString", "Work_Email"=>"MyString", "Work_Phone"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mContactApp Load (0.0ms)[0m  [1mSELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered contact_apps/_form.html.erb (4.5ms)
+  Rendered contact_apps/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+ContactAppsControllerTest: test_should_get_index
+------------------------------------------------
+  [1m[35mContactApp Load (0.1ms)[0m  SELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ContactAppsController#index as HTML
+  [1m[36mContactApp Load (0.1ms)[0m  [1mSELECT "contact_apps".* FROM "contact_apps"[0m
+  Rendered contact_apps/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+ContactAppsControllerTest: test_should_get_new
+----------------------------------------------
+  [1m[35mContactApp Load (0.1ms)[0m  SELECT  "contact_apps".* FROM "contact_apps" WHERE "contact_apps"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ContactAppsController#new as HTML
+  Rendered contact_apps/_form.html.erb (3.1ms)
+  Rendered contact_apps/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

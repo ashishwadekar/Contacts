@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @contact_app.First_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @contact_app.Last_Name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @contact_app.Phone %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @contact_app.Telephone %>
+</p>
+
+<p>
+  <strong>Work phone:</strong>
+  <%= @contact_app.Work_Phone %>
+</p>
+
+<p>
+  <strong>Email id:</strong>
+  <%= @contact_app.Email_Id %>
+</p>
+
+<p>
+  <strong>Work email:</strong>
+  <%= @contact_app.Work_Email %>
+</p>
+
+<p>
+  <strong>Github id:</strong>
+  <%= @contact_app.Github_Id %>
+</p>
+
+<p>
+  <strong>Facebook id:</strong>
+  <%= @contact_app.Facebook_Id %>
+</p>
+
+<%= link_to 'Edit', edit_contact_app_path(@contact_app) %> |
+<%= link_to 'Back', contact_apps_path %>

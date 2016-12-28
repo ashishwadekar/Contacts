@@ -1,0 +1,1 @@
+json.partial! "contact_apps/contact_app", contact_app: @contact_app

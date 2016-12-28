@@ -1,0 +1,2 @@
+json.extract! contact_app, :id, :First_name, :Last_Name, :Phone, :Telephone, :Work_Phone, :Email_Id, :Work_Email, :Github_Id, :Facebook_Id, :created_at, :updated_at
+json.url contact_app_url(contact_app, format: :json)
